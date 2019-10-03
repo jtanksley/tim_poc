@@ -16,13 +16,15 @@ import {
     MatTableModule,
     MatDividerModule,
     MatProgressSpinnerModule} from '@angular/material';
-
+import { MainNavComponent } from '../main-nav/main-nav.component';
 import { environment } from '../environments/environment';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+        AppComponent,
+       MainNavComponent
    
   ],
   imports: [
