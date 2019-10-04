@@ -18,14 +18,19 @@ import {
     MatProgressSpinnerModule} from '@angular/material';
 import { MainNavComponent } from '../main-nav/main-nav.component';
 import { environment } from '../environments/environment';
+import { PacketComponent } from './packet/packet.component';
+import { CrewComponent } from './crew/crew.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 
 @NgModule({
   declarations: [
         AppComponent,
-       MainNavComponent
-   
+       MainNavComponent,
+       PacketComponent,
+       CrewComponent,
+       ProjectsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
