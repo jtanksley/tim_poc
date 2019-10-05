@@ -17,6 +17,9 @@ $TiMPoc-accent: mat-palette($mat-orange, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $TiMPoc-warn: mat-palette($mat-red);
+$TiMPoc-gk: mat-palette($mat-yellow);
+$TiMPoc-au: mat-palette($mat-pink);
+$TiMPoc-pa: mat-palette($mat-green);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $TiMPoc-theme: mat-light-theme($TiMPoc-primary, $TiMPoc-accent, $TiMPoc-warn);

@@ -14,7 +14,14 @@ import {
     MatCardModule,
     MatButtonModule,
     MatTableModule,
+    MatTreeModule,
     MatDividerModule,
+    MatListModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatTooltipModule,
+    MatProgressBarModule,
+    MatCheckboxModule,
     MatProgressSpinnerModule} from '@angular/material';
 import { MainNavComponent } from '../main-nav/main-nav.component';
 import { environment } from '../environments/environment';
@@ -24,13 +31,16 @@ import { ProjectsComponent } from './projects/projects.component';
 
 
 
-@NgModule({
+
+
+@
+NgModule({
   declarations: [
-        AppComponent,
-       MainNavComponent,
-       PacketComponent,
-       CrewComponent,
-       ProjectsComponent
+    AppComponent,
+    MainNavComponent,
+    PacketComponent,
+    CrewComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,8 +56,16 @@ import { ProjectsComponent } from './projects/projects.component';
     MatCardModule,
     MatButtonModule,
     MatTableModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatTreeModule,
+    MatListModule,
     MatDividerModule,
+    MatTooltipModule,
+    MatProgressBarModule,
+    MatCheckboxModule,
     MatProgressSpinnerModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

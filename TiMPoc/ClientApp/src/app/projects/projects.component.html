@@ -1,1 +1,42 @@
-<p>projects works!</p>
+<div class="main_container">
+  <div class="row map_title"><div class="col-xs-12"><h2>Master Approval Pipeline</h2></div></div>
+  <div class="card_container">
+    <div class="row" *ngFor=" let project of projects">
+      <div class="col">
+        <mat-card>
+          <mat-card-subtitle><strong><a href="">{{project.name}}</a></strong><br /></mat-card-subtitle>
+          <mat-card-content>
+            <div class="row add_card_padding" *ngFor="let crew of project.crewmembers" >
+              <div class="col">
+                <mat-checkbox></mat-checkbox>
+              </div>
+              <div class="col">
+                {{ crew.firstname}}&nbsp;{{crew.lastname}}
+              </div>
+              <div class="col">
+                {{ crew.position}}
+              </div>
+              <div class="col">
+                {{ crew.startworktype}}
+              </div>
+              <div class="col" [ngSwitch]="crew.approvalstatus">
+                <span class="progress_bar" *ngSwitchCase=" 'i9' "><mat-progress-bar mode="determinate" color="warn" value="10"></mat-progress-bar></span>
+                <span class="progress_bar" *ngSwitchCase=" 'gk' "><mat-progress-bar mode="determinate" color="accent" value="40"></mat-progress-bar></span>
+                <span class="progress_bar" *ngSwitchCase=" 'au' "><mat-progress-bar mode="determinate" color="primary" value="70"></mat-progress-bar></span>
+                <span class="progress_bar" *ngSwitchDefault><mat-progress-bar mode="determinate" color="success" value="2"></mat-progress-bar></span>
+              </div>
+              <div class="col" [ngSwitch]="crew.approvalstatus">
+                <span *ngSwitchCase=" 'i9' "><button mat-raised-button color="warn">Verify I-9</button></span>
+                <span *ngSwitchCase=" 'gk' "><button mat-raised-button color="accent">Review</button></span>
+                <span *ngSwitchCase=" 'au' "><button mat-raised-button color="primary">Approve</button></span>
+              </div>
+
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+      
+
