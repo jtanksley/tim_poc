@@ -2,27 +2,27 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { MainNavComponent } from './main-nav.component';
 
-@Component({ selector: 'app-projects', template: '' })
-class ProjectsComponent { }
+@Component({ selector: 'mat-icon', template: '' })
+class MatIconModule { }
 
-@Component({ selector: 'app-main-nav', template: '' })
-class MainNavComponent { }
+@Component({ selector: 'mat-toolbar', template: '' })
+class MatToolbarModule { }
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('MainNavComponent', () => {
+  let component: MainNavComponent;
+  let fixture: ComponentFixture<MainNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppComponent, ProjectsComponent, MainNavComponent ]
+      declarations: [ MainNavComponent, MatIconModule,MatToolbarModule ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(MainNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

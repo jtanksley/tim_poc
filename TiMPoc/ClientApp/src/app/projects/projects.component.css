@@ -19,3 +19,7 @@
   margin: 10px;
  
 }
+.main_container {
+  position: relative;
+  top: 74px;
+}

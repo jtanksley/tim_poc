@@ -47,14 +47,9 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Progress</th>
         <td mat-cell *matCellDef="let row">
           <ng-container *ngFor="let crew of row.crewmembers">
-            <div class="add_card_padding"> <span class="progress_bar">
-  <mat-progress-bar mode="determinate" color="warn" value="10"></mat-progress-bar>
-  
-</span>
+            <div class="add_card_padding"> <span class="progress_bar"></span>
             </div>
-           
           </ng-container>
-         
         </td>
       </ng-container>
 
