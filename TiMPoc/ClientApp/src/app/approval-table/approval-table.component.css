@@ -1,21 +1,30 @@
+.full-width-table {
+  width: 100%;
+}
 .mat-card {
   margin: 10px;
   height: auto;
-  
 }
+
 .mat-list-item {
   margin: 10px;
 }
+
 .progress_bar {
   position: relative;
-  top: 10px;
-
+  top: 0px;
+  padding-bottom: 5px;
 }
+
 .add_card_padding {
   position: relative;
   padding: 20px;
 }
+
 .map_title {
   margin: 10px;
- 
+}
+.table-container {
+  height: 400px;
+  overflow: auto;
 }

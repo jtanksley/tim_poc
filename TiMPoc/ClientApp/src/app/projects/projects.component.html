@@ -1,37 +1,74 @@
 <div class="main_container">
   <div class="row map_title"><div class="col-xs-12"><h2>Master Approval Pipeline</h2></div></div>
+  <div class="search bar map_title">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Search" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+   
+  </div>
   <div class="card_container">
     <div class="row" *ngFor=" let project of projects">
       <div class="col">
         <mat-card>
           <mat-card-subtitle><strong><a href="">{{project.name}}</a></strong><br /></mat-card-subtitle>
           <mat-card-content>
-            <div class="row add_card_padding" *ngFor="let crew of project.crewmembers" >
-              <div class="col">
+            <!--Header row -->
+            <div class="row map_title">
+              <div class="col-sm-1 add_card_padding">
                 <mat-checkbox></mat-checkbox>
               </div>
-              <div class="col">
+              <div class="col-sm-2 add_card_padding">
+                <strong>Crewmember</strong>
+              </div>
+              <div class="col-sm-2 add_card_padding">
+                <strong>Position</strong> 
+              </div>
+              <div class="col-sm-2 add_card_padding">
+                <strong>Startwork</strong>
+              </div>
+              <div class="col add_card_padding">
+                <strong>Approval Progress</strong>
+              </div>
+              <div class="col add_card_padding">
+                <strong>To Do</strong>
+              </div>
+              <!--End Header row -->
+            </div>
+            <div class="row add_card_padding" *ngFor="let crew of project.crewmembers">
+
+              <div class="col-sm-1 add_card_padding">
+                <mat-checkbox></mat-checkbox>
+              </div>
+              <div class="col-sm-2 add_card_padding">
                 {{ crew.firstname}}&nbsp;{{crew.lastname}}
               </div>
-              <div class="col">
+              <div class="col-sm-2 add_card_padding">
                 {{ crew.position}}
               </div>
-              <div class="col">
+              <div class="col-sm-2 add_card_padding">
                 {{ crew.startworktype}}
               </div>
-              <div class="col" [ngSwitch]="crew.approvalstatus">
+              <div class="col add_card_padding" [ngSwitch]="crew.approvalstatus">
                 <span class="progress_bar" *ngSwitchCase=" 'i9' "><mat-progress-bar mode="determinate" color="warn" value="10"></mat-progress-bar></span>
                 <span class="progress_bar" *ngSwitchCase=" 'gk' "><mat-progress-bar mode="determinate" color="accent" value="40"></mat-progress-bar></span>
                 <span class="progress_bar" *ngSwitchCase=" 'au' "><mat-progress-bar mode="determinate" color="primary" value="70"></mat-progress-bar></span>
                 <span class="progress_bar" *ngSwitchDefault><mat-progress-bar mode="determinate" color="success" value="2"></mat-progress-bar></span>
               </div>
-              <div class="col" [ngSwitch]="crew.approvalstatus">
+              <div class="col add_card_padding" [ngSwitch]="crew.approvalstatus">
                 <span *ngSwitchCase=" 'i9' "><button mat-raised-button color="warn">Verify I-9</button></span>
                 <span *ngSwitchCase=" 'gk' "><button mat-raised-button color="accent">Review</button></span>
                 <span *ngSwitchCase=" 'au' "><button mat-raised-button color="primary">Approve</button></span>
               </div>
-
+              <mat-divider></mat-divider>
             </div>
+            
           </mat-card-content>
         </mat-card>
       </div>

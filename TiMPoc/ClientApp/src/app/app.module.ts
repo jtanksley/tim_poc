@@ -22,12 +22,16 @@ import {
     MatTooltipModule,
     MatProgressBarModule,
     MatCheckboxModule,
+    MatInputModule,
     MatProgressSpinnerModule} from '@angular/material';
 import { MainNavComponent } from '../main-nav/main-nav.component';
 import { environment } from '../environments/environment';
 import { PacketComponent } from './packet/packet.component';
 import { CrewComponent } from './crew/crew.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ApprovalTableComponent } from './approval-table/approval-table.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -40,7 +44,8 @@ NgModule({
     MainNavComponent,
     PacketComponent,
     CrewComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ApprovalTableComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -63,8 +68,11 @@ NgModule({
     MatDividerModule,
     MatTooltipModule,
     MatProgressBarModule,
-    MatCheckboxModule,
-    MatProgressSpinnerModule
+      MatCheckboxModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatSortModule
     
   ],
   providers: [],

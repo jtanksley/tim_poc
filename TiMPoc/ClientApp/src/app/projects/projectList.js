@@ -29,8 +29,8 @@ exports.ProjectList = [
                 approvalstatus: "gk",
                 i9: true,
                 i9verified: false,
-                position: "Key 2nd AD",
-                department: "Assistant Directors",
+                position: "Best Boy Grip",
+                department: "Grip",
                 project: "Tina Gandhi 1",
                 attachments: ["Box Kit Inventory: Test_1.pdf", "Voided Check: Direct Deposit Form.pdf"]
             },
@@ -44,14 +44,14 @@ exports.ProjectList = [
                 approvalstatus: "au",
                 i9: true,
                 i9verified: false,
-                position: "Key 2nd AD",
+                position: "Creative Director",
                 department: "Assistant Directors",
                 project: "Tina Gandhi 1"
             }
         ]
     },
     {
-        id: "ad1",
+        id: "ad2",
         name: "Tina Gandhi 2",
         crewmembers: [
             {
@@ -99,7 +99,7 @@ exports.ProjectList = [
         ]
     },
     {
-        id: "ad1",
+        id: "ad3",
         name: "Tina Gandhi 3",
         crewmembers: [
             {

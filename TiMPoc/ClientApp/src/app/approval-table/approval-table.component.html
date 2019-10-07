@@ -1,0 +1,89 @@
+<div class="row map_title"><span><h2>Master Approval Pipeline</h2></span></div>
+<div class="container">
+  <div class=" table-container mat-elevation-z8">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Project</th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <!-- Crew Member Column -->
+      <ng-container matColumnDef="crewmember">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Crewmember</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let crew of row.crewmembers">
+            <div class="add_card_padding">{{crew.firstname}}&nbsp;{{crew.lastname}}</div>
+            
+          </ng-container>
+         
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Position</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let crew of row.crewmembers">
+            <div class="add_card_padding">{{crew.position}}</div>
+           
+          </ng-container>
+        </td>
+      </ng-container>
+
+      <!-- Startwork Column -->
+      <ng-container matColumnDef="startwork">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Startwork</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let crew of row.crewmembers">
+            <div class="add_card_padding">{{crew.startworktype}}</div>
+            
+          </ng-container>
+        </td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="progress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Progress</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let crew of row.crewmembers">
+            <div class="add_card_padding"> <span class="progress_bar">
+  <mat-progress-bar mode="determinate" color="warn" value="10"></mat-progress-bar>
+  
+</span>
+            </div>
+           
+          </ng-container>
+         
+        </td>
+      </ng-container>
+
+      <!-- Queue Column -->
+      <ng-container matColumnDef="queue">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Progress</th>
+        <td mat-cell *matCellDef="let row">
+          <ng-container *ngFor="let crew of row.crewmembers">
+            <div class="add_card_padding"><span><button mat-raised-button color="warn">Verify I-9</button></span></div>
+            
+          </ng-container>
+         
+
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <mat-paginator #paginator
+                        [length]="dataSource?.data.length"
+                        [pageIndex]="0"
+                        [pageSize]="50"
+                        [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+
+
+</div>
+
+
