@@ -3,6 +3,7 @@ export class Crew {
     fillid: string;
     firstname: string;
     lastname: string;
+    fullname: string;
     startwork: boolean;
     startworktype: string;
     approvalstatus: string;
@@ -12,6 +13,7 @@ export class Crew {
     department: string;
     project: string;
     attachments?: Array<string>;
+    progress: number;
 
     constructor(id: string) {
         this.id = id;

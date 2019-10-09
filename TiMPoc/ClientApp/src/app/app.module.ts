@@ -35,9 +35,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { TestDashComponent } from './test-dash/test-dash.component';
 import { LayoutModule } from '@angular/cdk/layout';
-
-
-
+import { GridModule } from '@progress/kendo-angular-grid';
+import { KendoTableComponent } from "./kendo-table/kendo-table.component";
 
 
 @
@@ -49,7 +48,8 @@ NgModule({
     CrewComponent,
     ProjectsComponent,
     ApprovalTableComponent,
-    TestDashComponent
+    TestDashComponent,
+    KendoTableComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -78,7 +78,8 @@ NgModule({
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatSortModule,
-    LayoutModule
+    LayoutModule,
+    GridModule
     
   ],
   providers: [],

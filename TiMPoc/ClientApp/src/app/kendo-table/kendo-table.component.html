@@ -1,0 +1,10 @@
+<div class="kendo-container">
+  <kendo-grid [kendoGridBinding]="gridData" [filterable]="false" [selectable]="selectableSettings" scrollable="none">
+    <kendo-grid-checkbox-column></kendo-grid-checkbox-column>
+      <kendo-grid-column field="name" title="Project"></kendo-grid-column>
+    <kendo-grid-column  field="fullname" title="Crewmembers" >
+      <div *ngFor="let crew of gridData.crewmembers">{{crew.fullname}}</div>
+    </kendo-grid-column>
+     
+  </kendo-grid>
+</div>
